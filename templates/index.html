@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+    <form method="post" action="/">
+        <input type="submit" value="Clear" name="Clear"/>
+        <input type="submit" value="Load" name="Load"/>
+    </form>
+<table class="styled-table">
+    <tr>
+        <th>Metal ID</th>
+        <th>Data</th>
+        <th>Buy</th>
+        <th>Sell</th>
+    </tr>
+    {% for row in data %}
+    <tr>
+    {% for d in row %}
+    <td>{{ d }}</td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
